@@ -7,7 +7,7 @@ Project Created: **June 28, 2023** | README Updated: **July 13, 2023**
 Bike Share Usage Patterns Analysis: Chicago, New York City, and Washington DC (2017)
 
 ### Description
-Describe what your project is about and what it does
+This project aims to analyze and reveal the usage patterns of bike share systems in three major cities in the United States, Chicago, New York City, and Washington DC. The investigation specifically focuses on the first six months of bike share data in 2017. The data used for this analysis has been made available by _Motivate_, a prominent provider of bike share services.
 
 ### Files used
 Include the files used
