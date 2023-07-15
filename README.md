@@ -14,5 +14,7 @@ bikeshare.py
 Datasets: chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+_Motivate_ https://motivateco.com/
+_How to Write a Function_ https://www.youtube.com/watch?v=rrBJVMyD-Gs
+_While Loop_ https://wiki.python.org/moin/WhileLoop
 
