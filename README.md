@@ -4,7 +4,7 @@
 Project Created: **June 28, 2023** | README Updated: **July 13, 2023**
 
 ### Project Title
-Replace the Project Title
+Bike Share Usage Patterns Analysis: Chicago, New York City, and Washington DC (2017)
 
 ### Description
 Describe what your project is about and what it does
