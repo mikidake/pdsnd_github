@@ -10,7 +10,8 @@ Bike Share Usage Patterns Analysis: Chicago, New York City, and Washington DC (2
 This project aims to analyze and reveal the usage patterns of bike share systems in three major cities in the United States, Chicago, New York City, and Washington DC. The investigation specifically focuses on the first six months of bike share data in 2017. The data used for this analysis has been made available by _Motivate_, a prominent provider of bike share services.
 
 ### Files used
-Include the files used
+bikeshare.py
+Datasets: chicago.csv, new_york_city.csv, washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
