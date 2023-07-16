@@ -198,10 +198,14 @@ def display_data(df):
     start_loc = 0
     view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no.\n').lower()
 
-    while view_data == 'yes':
-        print(df.iloc[start_loc:start_loc + 5])
-        start_loc += 5
+    while view_data not in ['yes', 'no']:
+        print("Invalid input. Please enter 'yes' or 'no'.")
         view_data = input("Do you wish to continue? Enter yes or no: ").lower()
+            
+        while view_data == 'yes':
+            print(df.iloc[start_loc:start_loc + 5])
+            start_loc += 5
+            view_data = input("Do you wish to continue? Enter yes or no: ").lower()
 
 
 def main():
@@ -215,8 +219,13 @@ def main():
         user_stats(df)
         display_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
+
+        while restart not in ['yes', 'no']:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+            restart = input("Would you like to restart? Enter yes or no.\n").lower()
+
+        if restart != 'yes':
             break
 
 
