@@ -111,7 +111,7 @@ def time_stats(df):
     common_hour = df['Hour'].mode()[0]
     print('Most Common Start Hour:', common_hour)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print(f"\nThis took {round((time.time() - start_time), 3)} seconds.")
     print('-'*40)
 
 
@@ -133,7 +133,7 @@ def station_stats(df):
     common_trip = df['Trip'].mode()[0]
     print('Most Frequent Trip:', common_trip)
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print(f"\nThis took {round((time.time() - start_time), 3)} seconds.")
     print('-'*40)
 
 
@@ -144,13 +144,14 @@ def trip_duration_stats(df):
 
     # Display total travel time
     total_travel_time = df['Trip Duration'].sum()
-    print('Total Travel Time:', total_travel_time)
+    print(f'Total Travel Time: {total_travel_time} seconds')
 
     # Display mean travel time
     mean_travel_time = df['Trip Duration'].mean()
-    print('Mean Travel Time:', mean_travel_time)
+    mean_travel_time_rounded = round(mean_travel_time, 1)
+    print(f'Mean Travel Time: {mean_travel_time_rounded} seconds')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print(f"\nThis took {round((time.time() - start_time), 3)} seconds.")
     print('-'*40)
 
 
@@ -181,7 +182,7 @@ def user_stats(df):
     else:
         print('Birth year data is not available for this city.')
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print(f"\nThis took {round((time.time() - start_time), 3)} seconds.")
     print('-'*40)
 
 
@@ -197,10 +198,14 @@ def display_data(df):
     start_loc = 0
     view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no.\n').lower()
 
-    while view_data == 'yes':
-        print(df.iloc[start_loc:start_loc + 5])
-        start_loc += 5
+    while view_data not in ['yes', 'no']:
+        print("Invalid input. Please enter 'yes' or 'no'.")
         view_data = input("Do you wish to continue? Enter yes or no: ").lower()
+            
+        while view_data == 'yes':
+            print(df.iloc[start_loc:start_loc + 5])
+            start_loc += 5
+            view_data = input("Do you wish to continue? Enter yes or no: ").lower()
 
 
 def main():
@@ -214,8 +219,13 @@ def main():
         user_stats(df)
         display_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input('\nWould you like to restart? Enter yes or no.\n').lower()
+
+        while restart not in ['yes', 'no']:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+            restart = input("Would you like to restart? Enter yes or no.\n").lower()
+
+        if restart != 'yes':
             break
 
 
